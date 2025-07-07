@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERN Ecommerce</title>
+    <!-- Tailwind CSS  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Inter  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4f46e5",
+              secondary: "#f43f5e",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Custom CSS  -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <header class="shadow sticky top-0 bg-white z-50">
+      <div class="container mx-auto p-4">
+        <div class="flex justify-between items-center">
+          <a href="#" class="text-xl">
+            <div
+              class="flex justify-start items-center font-semibold hover:font-bold w-40"
+            >
+              <span class="text-primary">Shop</span>
+              <span class="text-secondary">Nest</span>
+            </div>
+          </a>
+          <nav class="hidden md:flex gap-5">
+            <a href="#home" class="text-sm hover:text-primary">Home</a>
+            <a href="#products" class="text-sm hover:text-primary">Products</a>
+            <a href="#popularProducts" class="text-sm hover:text-primary"
+              >Popular</a
+            >
+            <a href="#categories" class="text-sm hover:text-primary"
+              >Categories</a
+            >
+            <a href="#testimonials" class="text-sm hover:text-primary"
+              >Testimonials</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <div class="text-sm">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+            <button
+              class="text-sm text-secondary border-secondary border-2 hover:border-0 rounded-3xl px-4 py-1 hover:bg-primary hover:text-white transition"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section  -->
+      <section
+        id="home"
+        class="py-12 md:py-28 bg-gradient-to-r from-primary to-secondary"
+      >
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row items-center md:justify-between"
+          >
+            <!-- Content  -->
+            <div class="md:w-1/2 mb-10 md:mb-0">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white"
+              >
+                New Amazing Products
+              </h1>
+              <p class="text-xl mb-10 text-white">
+                Shop today and get
+                <span class="font-semibold">20% discount</span>
+              </p>
+              <div class="flex flex-col gap-x-5 gap-y-3 md:flex-row">
+                <a
+                  href="#"
+                  class="font-medium bg-white text-secondary px-6 py-3 rounded-lg text-center hover:bg-primary/50 hover:border-primary hover:text-white shadow transition"
+                  >Shop Now</a
+                >
+                <a
+                  href="#"
+                  class="border-2 border-white text-white px-6 py-3 rounded-lg text-center hover:bg-primary/50 shadow transition"
+                  >View Categories</a
+                >
+              </div>
+            </div>
+            <!-- Image  -->
+            <div class="md:w-1/2">
+              <img
+                class="max-w-full h-auto rounded-xl shadow-xl lg:w-3/4 float-right"
+                src="assets/images/hero.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why choose us section  -->
+      <section class="py-12 md:py-28 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-3xl font-bold text-center mb-4">
+              Why Choose ShopNest?
+            </h2>
+            <p class="text-gray-600 text-center">
+              We provide the best shopping experiences with our premium quality
+              products.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-5 gap-x-8"
+          >
+            <div class="bg-slate-100 py-5 px-7 rounded-lg shadow-md">
+              <!-- icon -->
+              <div class="text-4xl text-primary mb-4">
+                <i class="fa fa-check"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Quality Products</h3>
+              <p class="text-gray-600">
+                We provide only the best quality products from trusted
+                suppliers.
+              </p>
+            </div>
+
+            <div class="bg-slate-100 py-5 px-7 rounded-lg shadow-md">
+              <!-- icon -->
+              <div class="text-4xl text-primary mb-4">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Fast Delivery</h3>
+              <p class="text-gray-600">
+                Get your orders delivered in your record time.
+              </p>
+            </div>
+
+            <div class="bg-slate-100 py-5 px-7 rounded-lg shadow-md">
+              <!-- icon -->
+              <div class="text-4xl text-primary mb-4">
+                <i class="fa fa-refresh"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Easy Returns</h3>
+              <p class="text-gray-600">
+                No need to hustle for returning your products if not upto your
+                expectation.
+              </p>
+            </div>
+
+            <div class="bg-slate-100 py-5 px-7 rounded-lg shadow-md">
+              <!-- icon -->
+              <div class="text-4xl text-primary mb-4">
+                <i class="fa fa-credit-card"></i>
+              </div>
+              <h3 class="font-semibold text-xl mb-2">Secure Payment</h3>
+              <p class="text-gray-600">
+                Shop with confidence using secure payment methods and also with
+                multiple payment options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Products Section  -->
+      <section id="products" class="py-12 md:py-28 bg-slate-200">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-3xl font-bold text-center mb-4">
+              Featured Products
+            </h2>
+            <p class="text-gray-600 text-center">
+              Check out the latest and the best products available in the
+              market.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/apple-watch.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs px-3 py-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Apple Watch 2</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/airpods-pro.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Airpods Pro</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/iphone-16.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Iphone 16</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/macbook-pro.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">MacBook Pro</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 md:h-60 object-cover"
+                  src="./assets/images/products/samsung-pro.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Samsung Ultra Pro</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/apple-watch.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Apple Watch 2</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/apple-watch.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >-20%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Apple Watch 2</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/apple-watch.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white rounded-full text-xs py-3 px-1"
+                  >-20%</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Apple Watch 2</h3>
+                <div class="text-yellow-500 text-xs py-2">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half"></i>
+                  <span class="text-gray-500">(265)</span>
+                </div>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button class="text-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-12">
+            <a
+              href="#products"
+              class="text-white bg-primary px-6 py-3 rounded-lg font-medium hover:bg-primary/90"
+              >View All Products</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Registration -->
+      <section class="py-16 relative">
+        <img
+          class="absolute top-0 h-full w-full object-cover -z-20"
+          src="assets/images/bg.jpg"
+          alt=""
+        />
+        <div
+          class="absolute top-0 left-0 -z-10 h-full w-full bg-black opacity-60"
+        ></div>
+        <div class="container mx-auto px-4 relative z-1">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="flex flex-col items-center justify-center">
+              <h2
+                class="text-4xl md:text-6xl font-semibold text-white uppercase tracking-[.25rem] mb-6"
+              >
+                Dresses to impress
+              </h2>
+              <p class="text-sm text-gray-300">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
+                soluta debitis ad sint, facilis ut nemo doloribus optio beatae
+                rerum libero ratione voluptas itaque voluptates omnis quas a!
+                Magnam, cum!
+              </p>
+            </div>
+            <div class="bg-white rounded-2xl px-8 py-10 lg:w-3/4 mx-auto">
+              <h3 class="text-3xl font-bold text-center mb-4">Contact Form</h3>
+              <form>
+                <div class="pb-2">
+                  <label for="name">Full name</label>
+                  <input
+                    class="w-full py-2 px-3 rounded-md border-2 border-zinc-300 focus:border-0 focus:outline-none focus:ring-2 focus:ring-secondary mt-1"
+                    type="text"
+                    placeholder="Your Full Name"
+                    id="name"
+                    required
+                  />
+                </div>
+                <div class="pb-2">
+                  <label for="email">Email address</label>
+                  <input
+                    class="w-full py-2 px-3 rounded-md border-2 border-zinc-300 focus:border-0 focus:outline-none focus:ring-2 focus:ring-secondary mt-1"
+                    type="email"
+                    placeholder="Your Email Address"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="pb-2">
+                  <label for="phone">Phone number</label>
+                  <input
+                    class="w-full py-2 px-3 rounded-md border-2 border-zinc-300 focus:border-0 focus:outline-none focus:ring-2 focus:ring-secondary mt-1"
+                    type="tel"
+                    placeholder="Your Phone Number"
+                    id="phone"
+                    required
+                  />
+                </div>
+                <div class="pb-2">
+                  <label for="subject">Subject</label>
+                  <input
+                    class="w-full py-2 px-3 rounded-md border-2 border-zinc-300 focus:border-0 focus:outline-none focus:ring-2 focus:ring-secondary mt-1"
+                    type="subject"
+                    placeholder="Subject"
+                    id="subject"
+                    required
+                  />
+                </div>
+                <div class="pb-2">
+                  <label for="message">Message</label>
+                  <textarea
+                    class="w-full py-2 px-3 rounded-md border-2 border-zinc-300 focus:border-0 focus:outline-none focus:ring-2 focus:ring-secondary mt-1"
+                    type="text"
+                    placeholder="Subject"
+                    id="message"
+                    required
+                  ></textarea>
+                </div>
+                <input
+                  class="bg-primary text-whte px-6 py-2 rounded-lg hover:bg-primary/80"
+                  type="submit"
+                  value="Send Message"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Popular Products -->
+      <section id="popularProducts" class="py-12 md:py-28 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-3xl font-bold text-center mb-4">
+              Popular Products
+            </h2>
+            <p class="text-gray-600 text-center">
+              Check out the latest and the best products available in the
+              market.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/airpods-pro.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-500 text-white rounded-full text-xs px-3 py-1"
+                  >Bestseller</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Apple Watch 2</h3>
+                <p class="text-sm text-gray-500 py-2">
+                  One of the best selling products.
+                </p>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button
+                    class="bg-primary text-white rounded px-2 py-1 text-sm"
+                  >
+                    <span>Add to Cart</span>
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/samsung-pro.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-500 text-white rounded-full text-xs px-3 py-1"
+                  >Trending</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">Samsung S21 Ultra</h3>
+                <p class="text-sm text-gray-500 py-2">
+                  High-performance smartphone available in the market with the
+                  best AI features.
+                </p>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button
+                    class="bg-primary text-white rounded px-2 py-1 text-sm"
+                  >
+                    <span>Add to Cart</span>
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/airpods-pro.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-500 text-white rounded-full text-xs px-3 py-1"
+                  >Limited</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">MacBook Pro</h3>
+                <p class="text-sm text-gray-500 py-2">
+                  High security features with high-performance processor.
+                </p>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button
+                    class="bg-primary text-white rounded px-2 py-1 text-sm"
+                  >
+                    <span>Add to Cart</span>
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+              <div class="relative">
+                <img
+                  class="rounded-t-lg w-full h-48 object-cover"
+                  src="./assets/images/products/iphone-16.jpg"
+                  alt=""
+                />
+                <span
+                  class="absolute top-3 right-3 bg-red-500 text-white rounded-full text-xs px-3 py-1"
+                  >HQ</span
+                >
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold tex-lg">iphone 16</h3>
+                <p class="text-sm text-gray-500 py-2">
+                  High quality images and videos with secure system.
+                </p>
+                <div class="flex justify-between">
+                  <div>
+                    <span class="text-primary text-lg font-bold mr-1"
+                      >$79.99</span
+                    >
+                    <span class="line-through text-gray-500 text-sm"
+                      >$99.99</span
+                    >
+                  </div>
+                  <button
+                    class="bg-primary text-white rounded px-2 py-1 text-sm"
+                  >
+                    <span>Add to Cart</span>
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Call to Action  -->
+      <section id="cta" class="py-12 bg-black/60">
+        <div class="container mx-auto px-4">
+          <div class="mb-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-4">
+              Join Our Newsletters
+            </h2>
+            <p class="text-slate-200 text-center">
+              Subscribe to get the latest updates on our new arrivals and
+              special offers.
+            </p>
+          </div>
+          <form class="flex flex-col md:flex-row gap-3 justify-center">
+            <input
+              class="rounded-lg text-zinc-800 px-4 py-3 lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-secondary"
+              type="email"
+              id="email"
+              placeholder="Your email address"
+            />
+            <button
+              class="bg-secondary px-6 py-3 rounded-lg text-white font-medium transition hover:secondary/90"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- Categories  -->
+      <section id="categories" class="py-12 md:py-28 bg-slate-100">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-3xl font-bold text-center mb-4">
+              Shop By Category
+            </h2>
+            <p class="text-slate-500 text-center">
+              Browse your products by categories.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8"
+          >
+            <a href="#">
+              <div
+                class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col items-center justify-between gap-2"
+              >
+                <div
+                  class="text-primary text-4xl bg-slate-200 p-5 h-20 w-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fa fa-laptop"></i>
+                </div>
+                <div class="text-center">
+                  <h3 class="font-medium text-xl">Laptops & PC</h3>
+                  <p class="text-slate-600 text-sm">35 Products</p>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col items-center justify-between gap-2"
+              >
+                <div
+                  class="text-primary text-3xl bg-slate-200 p-5 h-20 w-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div class="text-center">
+                  <h3 class="font-semibold text-lg">Cosmetics and Fashion</h3>
+                  <p class="text-slate-600 text-sm">25 Products</p>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col items-center justify-between gap-2"
+              >
+                <div
+                  class="text-primary text-4xl bg-slate-200 p-5 h-20 w-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="text-center">
+                  <h3 class="font-medium text-xl">Groceries</h3>
+                  <p class="text-slate-600 text-sm">50 Products</p>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col items-center justify-between gap-2"
+              >
+                <div
+                  class="text-primary text-4xl bg-slate-200 p-5 h-20 w-20 rounded-full flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-cube"></i>
+                </div>
+                <div class="text-center">
+                  <h3 class="font-medium text-xl">Micellaneous</h3>
+                  <p class="text-slate-600 text-sm">35 Products</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials  -->
+      <section id="testimonials" class="py-12 md:py-28 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="mb-10">
+            <h2 class="text-3xl font-bold text-center mb-4">
+              What Our Customers Say
+            </h2>
+            <p class="text-slate-500 text-center">
+              Hear from our satisfied customers what they say about us.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+            >
+              <div class="text-slate-400 text-lg">
+                <i class="fa fa-quote-right"></i>
+              </div>
+              <p class="text-sm text-slate-600 text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                dolor temporibus ut ducimus quas atque iusto incidunt amet
+                corporis molestias? Alias cumque possimus rerum at voluptatem
+                quod veritatis provident eos illum pariatur nulla, inventore sit
+                eveniet dicta labore officia laudantium.
+              </p>
+              <div class="text-yellow-500 text-sm py-3">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-stroke"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  class="h-12 w-12 object-cover rounded-full border border-slate-400"
+                  src="assets/images/customers/michal.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="font-bold">Michael Faraday</h4>
+                  <p class="text-xs text-slate-500">Satisfied Customer</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+            >
+              <div class="text-slate-400 text-lg">
+                <i class="fa fa-quote-right"></i>
+              </div>
+              <p class="text-sm text-slate-600 text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                dolor temporibus ut ducimus quas atque iusto incidunt amet
+                corporis molestias? Alias cumque possimus rerum at voluptatem
+                quod veritatis provident eos illum pariatur nulla, inventore sit
+                eveniet dicta labore officia laudantium.
+              </p>
+              <div class="text-yellow-500 text-sm py-3">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  class="h-12 w-12 object-cover rounded-full border border-slate-400"
+                  src="assets/images/customers/mira.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="font-bold">Meera Taode</h4>
+                  <p class="text-xs text-slate-500">Satisfied Customer</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+            >
+              <div class="text-slate-400 text-lg">
+                <i class="fa fa-quote-right"></i>
+              </div>
+              <p class="text-sm text-slate-600 text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                dolor temporibus ut ducimus quas atque iusto incidunt amet
+                corporis molestias? Alias cumque possimus rerum at voluptatem
+                quod veritatis provident eos illum pariatur nulla, inventore sit
+                eveniet dicta labore officia laudantium.
+              </p>
+              <div class="text-yellow-500 text-sm py-3">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-stroke"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  class="h-12 w-12 object-cover rounded-full border border-slate-400"
+                  src="assets/images/customers/michel.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="font-bold">Ritchel Saira</h4>
+                  <p class="text-xs text-slate-500">Satisfied Customer</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-slate-100 rounded-lg shadow-md hover:shadow-lg transition p-6"
+            >
+              <div class="text-slate-400 text-lg">
+                <i class="fa fa-quote-right"></i>
+              </div>
+              <p class="text-sm text-slate-600 text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                dolor temporibus ut ducimus quas atque iusto incidunt amet
+                corporis molestias? Alias cumque possimus rerum at voluptatem
+                quod veritatis provident eos illum pariatur nulla, inventore sit
+                eveniet dicta labore officia laudantium.
+              </p>
+              <div class="text-yellow-500 text-sm py-3">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <img
+                  class="h-12 w-12 object-cover rounded-full border border-slate-400"
+                  src="assets/images/customers/roman.jpg"
+                  alt=""
+                />
+                <div>
+                  <h4 class="font-bold">Roman Regmi</h4>
+                  <p class="text-xs text-slate-500">Satisfied Customer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="py-16 bg-slate-800">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-slate-600 pb-16 mb-5"
+        >
+          <div>
+            <h1 class="text-2xl font-bold text-white">ShopNest</h1>
+            <p class="text-sm text-slate-400 text-justify py-3">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex ipsum
+              sit numquam saepe iste veniam nesciunt quaerat labore molestias.
+              Inventore.
+            </p>
+            <div class="flex gap-2">
+              <a href="" class="text-slate-300"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="" class="text-slate-300"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="" class="text-slate-300"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="" class="text-slate-300"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-3">Shop</h3>
+            <ul>
+              <li>
+                <a href="#" class="text-sm text-slate-300 hover:underline"
+                  >Featured Products</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-slate-300 hover:underline"
+                  >Popular Products</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-slate-300 hover:underline"
+                  >New Arrivals</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-slate-300 hover:underline"
+                  >Sale Items</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-3">We Accept</h3>
+            <div class="flex items-start flex-col gap-3 gap-2">
+              <img
+                class="w-auto h-10 bg-white rounded px-5 py-2"
+                src="assets/images/payments/khalti.png"
+                alt=""
+              />
+              <img
+                class="w-auto h-10 bg-white rounded px-5 py-2"
+                src="assets/images/payments/esewa.png"
+                alt=""
+              />
+              <img
+                class="w-auto h-10 bg-white rounded px-5 py-2"
+                src="assets/images/payments/phonepay.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white mb-3">Contact Us</h3>
+            <ul class="text-slate-300 text-sm">
+              <li class="mb-1 flex items-center gap-2">
+                <i class="fa fa-envelope"></i>
+                <span>info@shopnest.com</span>
+              </li>
+              <li class="mb-1 flex gap-2">
+                <i class="fa fa-map-marker-alt"></i>
+                <span>Ghorahi Sub-Metropolitancity -15, Ratanpur, Dang</span>
+              </li>
+              <li class="mb-1 flex gap-2">
+                <i class="fa fa-phone"></i>
+                <span>+977 9813456034</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-3s"
+        >
+          <p class="text-slate-400 text-sm">Copyright &copy; 2025 ShopNest</p>
+          <div>
+            <a class="text-sm text-slate-400 hover:underline" href="#"
+              >Privacy Policy</a
+            >
+            <a class="text-sm text-slate-400 hover:underline" href="#"
+              >Terms and Conditions</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <img
+      class="h-svh w-full object-cover fixed top-0 left-0 -z-50"
+      src="assets/images/bg-btm.jpg"
+      alt="Background"
+    />
+
+    <!-- Jump to top -->
+    <a
+      href="#home"
+      class="text-xl fixed bottom-5 right-5 bg-primary border border-secondary text-white rounded-xl h-10 w-10 flex items-center justify-center transition z-10"
+    >
+      <i class="fa fa-arrow-up"></i>
+    </a>
+  </body>
+</html>
